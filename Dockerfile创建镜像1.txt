@@ -145,6 +145,11 @@ curl http://123.207.215.55:8088   (123.207.215.55为本机IP)
 方式三：
 假设容器的ip地址为172.17.0.2(可通过docker inspect查看)
 
+
+curl http://172.17.0.2:80
+
+curl http://123.207.215.55:8088
+ 
 补充：
 docker logs –f <container_id> 可查看错误日志
 
@@ -153,8 +158,3 @@ docker logs –f <container_id> 可查看错误日志
 二、关闭端口号:iptables -A INPUT -p tcp --drop 端口号-j DROP
 　　iptables -A OUTPUT -p tcp --dport 端口号-j DROP
 三、打开端口号：iptables -A INPUT -p tcp --dport 端口号 -j ACCEPT
-
-curl http://172.17.0.2:80
-
-curl http://123.207.215.55:8088
- 
